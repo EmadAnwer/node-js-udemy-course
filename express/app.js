@@ -1,12 +1,20 @@
-const http = require('http');
-
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+// body from a form
+app.use(bodyParser.urlencoded({ extends: false }));
+app.use('/add-product', (req, res, next) => {
+  res.send(
+    `<form action="/product" method="POST">
+      <input type="text" name="title">
+      <button type="submit">Add Product</button>
+  </form>`
+  );
+});
 
-app.use('/users', (req, res, next) => {
-  res.send('<h1>Hello This Users page</h1>');
-  console.log('middleware 1');
-  next();
+app.post('/product', (req, res, next) => {
+  console.log(req.body);
+  res.send(`<h1>${req.body['title']}</h1>`);
 });
 app.get('/', (req, res) => {
   res.send(`<h1>Hello, this is the root route</h1>`);
