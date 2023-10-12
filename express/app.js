@@ -6,6 +6,6 @@ const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({ extends: false }));
-app.use(adminRouter);
+app.use('/admin',adminRouter);
 app.use(shopRouter);
 app.listen(3000);
