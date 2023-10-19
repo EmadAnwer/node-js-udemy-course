@@ -1,0 +1,16 @@
+{
+  "name": "assignment-4",
+  "version": "1.0.0",
+  "description": "assigments 4",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon start"
+  },
+  "author": "Eamd Anwer",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
