@@ -10,14 +10,21 @@ const getProductsFromFile = (cb) => {
     if (err) {
       cb([]);
     } else {
-      cb(JSON.parse(fileContent));
+      try {
+        cb(JSON.parse(fileContent));
+      } catch (error) {
+        cb([]);
+      }
     }
   });
 };
 
 module.exports = class Product {
-  constructor(title) {
+  constructor(title, imageURL, price, description) {
     this.title = title;
+    this.imageURL = imageURL;
+    this.price = price;
+    this.description = description;
   }
 
   save() {
