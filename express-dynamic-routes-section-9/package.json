@@ -5,19 +5,19 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
+    "start": "nodemon --ignore data/products.json app.js",
     "start-server": "node app.js"
   },
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "nodemon": "^3.0.1"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
+    "ejs": "^3.1.9",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "pug": "^2.0.3"
+    "express-handlebars": "^7.1.2",
+    "pug": "^3.0.2"
   }
 }
