@@ -71,7 +71,7 @@ exports.postDeleteProduct = (req, res, next) => {
   const deleteMode = req.query.delete === 'true';
   if (deleteMode) {
     const productId = req.body.productId;
-    Product.delete(productId, () => {
+    Product.deleteByID(productId, () => {
       res.redirect('/admin/products');
     });
   } else {
