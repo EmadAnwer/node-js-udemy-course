@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Product = require('./product');
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
@@ -61,6 +62,16 @@ module.exports = class Cart {
           console.log(error);
         })
       );
+    });
+  }
+
+  static getProducts(cb) {
+    fs.readFile(p, (error, data) => {
+      if (error) {
+        return cb([]);
+      }
+
+      return cb(JSON.parse(data).products);
     });
   }
 };
